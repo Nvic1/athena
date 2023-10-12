@@ -13,6 +13,13 @@ const config: Config = {
   theme: {
     extend: {
     },
+    screens: {
+    
+      'mob': '375px', 
+      'tab': '768px',
+      'desk': '1440px',
+
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
