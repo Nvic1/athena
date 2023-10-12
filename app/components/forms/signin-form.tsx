@@ -34,6 +34,8 @@ export default function FormSignin({callbackUrl}: {callbackUrl: string}) {
         }
 
 
+        reset(); // reset the form fields and the form states
+
 
     }
 
@@ -41,14 +43,14 @@ export default function FormSignin({callbackUrl}: {callbackUrl: string}) {
 
     return (
 
-            <form onSubmit={handleSubmit(formSubmit)} className="w-96 flex flex-col px-10 py-4 rounded-xl outline-none  bg-orange-200 space-y-5 shadow-md">
+            <form onSubmit={handleSubmit(formSubmit)} className="tab:w-96 flex flex-col px-6 py-2 tab:px-10 tab:py-4 rounded-xl outline-none  bg-orange-200 space-y-5 shadow-md">
                 <div className="flex flex-col space-y-1 5">
                     <label className="text-sm font-medium text-slate-600" htmlFor="username">Username</label>
                     <input {...register('username')} className="px-4 py-2 rounded-lg bg-amber-100 outline-none focus:bg-neutral-200 focus:border-2 focus:border-slate-700" type="text" name="username" id="" />
                     {errors?.username && (<p className='text-sm text-rose-500 font-medium'>{errors.username.message}</p>)}
                 </div>
 
-                <div className="flex flex-col space-y-1 5">
+                <div className="flex flex-col space-y-1 5 mb-4">
                     <label className="text-sm font-medium text-slate-600" htmlFor="password">Password</label>
                     <input {...register('password')} className="px-4 py-2 rounded-lg bg-amber-100 outline-none focus:bg-neutral-200 focus:border-2 focus:border-slate-700" type="password" name="password" id="" />
                     {errors?.password && (<p className='text-sm text-rose-500 font-medium'>{errors.password.message}</p>)}
@@ -56,7 +58,7 @@ export default function FormSignin({callbackUrl}: {callbackUrl: string}) {
 
                 <FormSubmitButton pending={isSubmitting}/>
                 
-                <p className="text-sm font-normal text-slate-700 underline mt-8">Forgotten password?</p>
+                <p className="text-sm font-normal text-slate-700 underline mt-10">Forgotten password?</p>
                 {/* <pre>{JSON.stringify({isSubmitSuccessful, isSubmitted, isSubmitting}, null, 2)}</pre> */}
 
             </form>        
