@@ -1,0 +1,1 @@
+export const Waitres = (ms:number) => new Promise((resolve) => setTimeout(resolve, ms));
